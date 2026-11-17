@@ -2,10 +2,10 @@
    AKIT4 // black · red · anime-tech
    ========================================================= */
 :root {
-  --bg: #0d0a10;
-  --bg2: #150e17;
-  --cell: #110c14;
-  --cell-hi: #1f1222;
+  --bg: #000000;
+  --bg2: #060407;
+  --cell: #07050a;
+  --cell-hi: rgba(228, 0, 43, .07);
   --line: rgba(240, 228, 250, .09);
   --line2: rgba(240, 228, 250, .16);
   --red: #e4002b;
@@ -32,9 +32,9 @@ body {
   margin: 0;
   background: var(--bg);
   background-image:
-    radial-gradient(1000px 620px at 50% -12%, rgba(228, 0, 43, .17), transparent 70%),
-    linear-gradient(to right, rgba(235, 227, 243, .025) 1px, transparent 1px),
-    linear-gradient(rgba(235, 227, 243, .025) 1px, transparent 1px);
+    radial-gradient(1000px 620px at 50% -12%, rgba(228, 0, 43, .14), transparent 70%),
+    linear-gradient(to right, rgba(235, 227, 243, .035) 1px, transparent 1px),
+    linear-gradient(rgba(235, 227, 243, .035) 1px, transparent 1px);
   background-size: auto, 56px 56px, 56px 56px;
   background-position: center top, center center, center center;
   background-attachment: fixed;
@@ -83,7 +83,7 @@ body.no-crt .crt { display: none; }
 .topbar {
   position: fixed; top: var(--gap); left: var(--gap); right: var(--gap); height: var(--top-h); z-index: 60;
   display: flex; align-items: center; gap: 18px; padding: 0 8px 0 20px;
-  background: rgba(19, 12, 21, .8); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  background: rgba(3, 2, 4, .82); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
   border: 1px solid var(--line2); box-shadow: 0 12px 40px rgba(0, 0, 0, .35);
 }
 .topbar::before { content: ""; position: absolute; left: -1px; top: -1px; width: 12px; height: 12px; border-left: 2px solid var(--red-hot); border-top: 2px solid var(--red-hot); pointer-events: none; }
@@ -113,7 +113,7 @@ html.side-collapsed { --side: 54px; }
 .side {
   position: fixed; top: calc(var(--top-h) + var(--gap) * 2); left: var(--gap); bottom: var(--gap); width: var(--side); z-index: 50;
   display: flex; flex-direction: column;
-  background: rgba(19, 12, 21, .8); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: rgba(3, 2, 4, .82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--line2); box-shadow: 0 12px 40px rgba(0, 0, 0, .35);
   transition: width .3s cubic-bezier(.2, .8, .2, 1), transform .3s cubic-bezier(.2, .8, .2, 1);
 }
@@ -183,7 +183,7 @@ main, .footer { margin-left: calc(var(--side) + var(--gap) * 2); transition: mar
 
 /* joined grids: 1px hairlines between cells */
 .joined { display: grid; gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.joined > * { background: var(--cell); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.joined > * { background: transparent; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
 /* ---------- hero ---------- */
 .hero { position: relative; min-height: 100svh; padding: calc(var(--top-h) + var(--gap) + 40px) 20px 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
@@ -221,7 +221,7 @@ main, .footer { margin-left: calc(var(--side) + var(--gap) * 2); transition: mar
 .caret { color: var(--red-hot); animation: blink .8s steps(1) infinite; }
 
 .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.btn { --c: var(--text); display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; font-family: var(--f-head); font-weight: 500; font-size: 14px; letter-spacing: .5px; color: var(--c); border: 1px solid var(--line2); background: rgba(13, 10, 16, .75); transition: color .2s, background .2s, border-color .2s; }
+.btn { --c: var(--text); display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; font-family: var(--f-head); font-weight: 500; font-size: 14px; letter-spacing: .5px; color: var(--c); border: 1px solid var(--line2); background: rgba(0, 0, 0, .75); transition: color .2s, background .2s, border-color .2s; }
 .btn svg { width: 17px; height: 17px; }
 .btn:hover { border-color: var(--red); background: var(--red); color: #fff; }
 .btn-pink { background: var(--red); border-color: var(--red); color: #fff; }
@@ -229,7 +229,7 @@ main, .footer { margin-left: calc(var(--side) + var(--gap) * 2); transition: mar
 .btn.sm { padding: 7px 14px; font-size: 13px; }
 
 .stats { position: relative; z-index: 2; margin-top: 52px; grid-template-columns: repeat(4, 1fr); width: min(760px, 100%); }
-.stat { padding: 16px 12px; background: rgba(18, 12, 20, .85) !important; }
+.stat { padding: 16px 12px; background: rgba(5, 3, 6, .88) !important; }
 .stat b { display: block; font-family: var(--f-head); font-weight: 700; font-size: 38px; line-height: 1.1; color: var(--text); }
 .stat:first-child b { color: var(--red-hot); }
 .stat span { font-family: var(--f-mono); font-size: 11px; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; }
@@ -239,7 +239,7 @@ main, .footer { margin-left: calc(var(--side) + var(--gap) * 2); transition: mar
 
 /* ---------- console (inline terminal) ---------- */
 #consola { padding-top: 40px; }
-.console { max-width: 860px; margin: 0 auto; border: 1px solid var(--line2); background: rgba(18, 12, 20, .92); box-shadow: 0 30px 80px rgba(0, 0, 0, .45); }
+.console { max-width: 860px; margin: 0 auto; border: 1px solid var(--line2); background: rgba(5, 3, 6, .94); box-shadow: 0 30px 80px rgba(0, 0, 0, .45); }
 .console-bar { display: flex; align-items: center; gap: 14px; padding: 9px 14px; border-bottom: 1px solid var(--line); font-family: var(--f-mono); font-size: 12px; color: var(--dim); }
 .console-bar .title { color: var(--muted); }
 .console-hint { margin-left: auto; }
@@ -595,7 +595,7 @@ html { zoom: var(--z); }
 }
 
 /* ---------- writeup: tarjeta como botón ---------- */
-.wu { width: 100%; text-align: left; font: inherit; color: var(--text); background: var(--panel); appearance: none; border-top: 0; border-left: 0; }
+.wu { width: 100%; text-align: left; font: inherit; color: var(--text); background: transparent; appearance: none; border-top: 0; border-left: 0; }
 .wu .read { transition: color .2s; }
 
 /* ---------- writeup popup ---------- */
@@ -669,5 +669,5 @@ html { zoom: var(--z); }
 .vuln-fix b { color: var(--sv); }
 
 /* ---------- lluvia matrix (fondo global) ---------- */
-#matrix { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; opacity: .28; }
+#matrix { position: fixed; inset: 0; width: calc(100vw / var(--z, 1)); height: calc(100vh / var(--z, 1)); z-index: -1; pointer-events: none; opacity: .45; }
 @media (prefers-reduced-motion: reduce) { #matrix { opacity: .12; } }

@@ -2746,13 +2746,17 @@
     resize();
     addEventListener("resize", resize);
     document.addEventListener("visibilitychange", () => { visible = !document.hidden; });
-    let last = 0;
+    let last = 0, frame = 0;
     function draw(t) {
       requestAnimationFrame(draw);
       if (!visible || document.body.classList.contains("no-matrix")) return;
       if (t - last < 55) return; last = t; // ~18 fps, suficiente y ligero
-      ctx.fillStyle = "rgba(13, 10, 16, .10)"; // estela: desvanece lo anterior
+      // estela: desvanece hacia transparente (deja ver la rejilla y el negro del fondo)
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.fillStyle = "rgba(0, 0, 0, .085)";
       ctx.fillRect(0, 0, w, h);
+      if (++frame % 180 === 0) { ctx.fillStyle = "rgba(0, 0, 0, .5)"; ctx.fillRect(0, 0, w, h); } // limpia restos sin redondear
+      ctx.globalCompositeOperation = "source-over";
       ctx.font = fs + "px 'IBM Plex Mono', monospace";
       for (let i = 0; i < cols; i++) {
         const ch = CHARS[(Math.random() * CHARS.length) | 0];
