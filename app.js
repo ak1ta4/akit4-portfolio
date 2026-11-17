@@ -1,5 +1,5 @@
 /* =========================================================
-   AK1T4 // app.js
+   AKIT4 // app.js
    ========================================================= */
 (() => {
   "use strict";
@@ -19,9 +19,9 @@
   ];
 
   const EXP = [
-    { co: "Ocio Soluciones Informáticas", role: "Soporte técnico informático", place: "", d: "Diagnóstico y reparación de equipos, instalación y configuración de software y atención técnica a clientes.", xp: 60 },
-    { co: "PC Partner", role: "Soporte técnico informático · experiencia internacional", place: "", d: "Trabajo técnico en un entorno internacional: montaje, reparación y puesta a punto de equipos informáticos.", xp: 100 },
-    { co: "Institut Les Tourelles", role: "Soporte informático · inventariado", place: "", d: "Soporte informático en un centro educativo: resolución de incidencias y gestión del inventario de equipos con Excel.", xp: 100 },
+    { co: "Ocio Soluciones Informáticas", role: "Soporte técnico informático", d: "Diagnóstico y reparación de equipos, instalación y configuración de software y atención técnica a clientes.", xp: 60 },
+    { co: "PC Partner", role: "Soporte técnico informático · experiencia internacional", d: "Trabajo técnico en un entorno internacional: montaje, reparación y puesta a punto de equipos informáticos.", xp: 100 },
+    { co: "Institut Les Tourelles", role: "Soporte informático · inventariado", d: "Soporte informático en un centro educativo: resolución de incidencias y gestión del inventario de equipos con Excel.", xp: 100 },
   ];
 
   const TOOLS = [
@@ -2604,7 +2604,7 @@
       </div>
       <div class="wu-article">${renderBody(w.body || [["p", "Writeup en preparación."]])}</div>
       ${info ? `<div class="wu-report"><h4 class="wu-h">Informe · vulnerabilidades y mitigaciones</h4><div class="vulns">${info}</div></div>` : ""}
-      <div class="wu-signoff">— ak1t4 · <span class="m">máquina resuelta · uid=0(root)</span></div>`;
+      <div class="wu-signoff">— akit4 · <span class="m">máquina resuelta · uid=0(root)</span></div>`;
     wuModal.hidden = false; document.body.style.overflow = "hidden";
     wuBody.scrollTop = 0;
     try { history.replaceState(null, "", "#wu-" + w.slug); } catch (e) { location.hash = "wu-" + w.slug; }
@@ -2898,12 +2898,12 @@
   addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
   /* ---------------- TERMINAL (inline) ---------------- */
-  const out = $("#term-out"), inp = $("#term-input"), PROMPT = `<span class="p">ak1t4@hq:~$</span> `;
+  const out = $("#term-out"), inp = $("#term-input"), PROMPT = `<span class="p">akit4@hq:~$</span> `;
   const hist = []; let hi = 0, busy = false;
   const print = (html) => { out.insertAdjacentHTML("beforeend", html + "\n"); out.scrollTop = out.scrollHeight; };
   const SECTIONS = ["inicio", "formacion", "idiomas", "experiencia", "certificaciones", "perfiles", "herramientas", "writeups"];
   const BIO = "Técnico en Telecomunicaciones, muy centrado en la ciberseguridad. Me gusta atacar y defender a partes iguales: resolver máquinas de DockerLabs y CTFs, y entender cómo se protege lo que rompo. Además me manejo muy bien con la IA como herramienta de trabajo —Claude, Claude Code— y la considero una aliada potente y muy útil en el día a día. Mi meta es sacarme la titulación de Ciberseguridad e ir sumando certificaciones de Red y Blue Team.";
-  const WHOAMI = `<span class="c">akit4</span> <span class="m">(ak1t4)</span> — Técnico en Telecomunicaciones · Ciberseguridad Red &amp; Blue Team`;
+  const WHOAMI = `<span class="c">akit4</span> — Técnico en Telecomunicaciones · Ciberseguridad Red &amp; Blue Team`;
   const CMDS = {
     help: () => print(`<span class="y">Comandos disponibles</span>
   <span class="c">whoami</span>          quién soy
@@ -2945,9 +2945,9 @@
       print(`<span class="c">${esc(t.name)}</span> <span class="m">[${esc(t.cat)}]</span>\n${esc(t.desc)}`);
     },
     social: () => print(`GitHub      <a href="https://github.com/ak1ta4" target="_blank" rel="noopener">github.com/ak1ta4</a>
-DockerLabs  <a href="https://dockerlabs.es/perfil/ak1t4" target="_blank" rel="noopener">@ak1t4</a>
-TryHackMe   <a href="https://tryhackme.com/p/ak1t4" target="_blank" rel="noopener">@ak1t4</a>
-HackTheBox  @ak1t4`),
+DockerLabs  <a href="https://dockerlabs.es/perfil/ak1t4" target="_blank" rel="noopener">@akit4</a>
+TryHackMe   <a href="https://tryhackme.com/p/ak1t4" target="_blank" rel="noopener">@akit4</a>
+HackTheBox  @akit4`),
     crt: () => { crtBtn.click(); print("scanlines " + (document.body.classList.contains("no-crt") ? "OFF" : "ON")); },
     clear: () => { out.innerHTML = ""; },
     exit: () => print(`<span class="m">No hay salida… prueba 'cd inicio'.</span>`),
@@ -3041,13 +3041,13 @@ HackTheBox  @ak1t4`),
     if (reduced || seen) { el.remove(); done(); return; }
     document.body.classList.add("booting");
     const lines = [
-      `<span class="c">AK1T4//HQ</span> · system boot <span class="m">v3.0</span>`,
+      `<span class="c">AKIT4//HQ</span> · system boot <span class="m">v3.0</span>`,
       `<span class="m">────────────────────────────────────────</span>`,
       `[<span class="y"> OK </span>] Cargando núcleo ........... TELECOM.kernel`,
       `[<span class="y"> OK </span>] Módulos ofensivos ......... red_team`,
       `[<span class="y"> OK </span>] Módulos defensivos ........ blue_team`,
       `[<span class="y"> OK </span>] Enlace con DockerLabs ..... 172.17.0.2`,
-      `[<span class="y"> OK </span>] Sincronizando perfil ...... ak1t4`,
+      `[<span class="y"> OK </span>] Sincronizando perfil ...... akit4`,
       ``,
       `<span class="p">システム起動完了。</span> ようこそ!`,
     ];

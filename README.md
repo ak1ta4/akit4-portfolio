@@ -1,13 +1,13 @@
-# ak1t4 // Portfolio
+# akit4 // Portfolio
 
-Portfolio personal de **akit4** (`ak1t4`) — ciberseguridad y CTF, Red & Blue Team.
+Portfolio personal de **akit4** — ciberseguridad y CTF, Red & Blue Team.
 
 Interfaz con estética anime / tech en negro y rojo, totalmente responsive, con una terminal
 interactiva integrada y los writeups de máquinas abriéndose en un popup (con enlace directo a cada uno).
 
 ## 🔗 Web
 
-Publicado con GitHub Pages: **https://ak1ta4.github.io/ak1t4-portfolio/**
+Publicado con GitHub Pages: **https://ak1ta4.github.io/akit4-portfolio/**
 
 ## ✨ Características
 
@@ -47,4 +47,4 @@ cada cual la sustituya por la suya.
 
 ---
 
-© 2026 akit4 · ak1t4
+© 2026 akit4
